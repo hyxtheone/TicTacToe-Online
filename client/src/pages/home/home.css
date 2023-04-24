@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.main {
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.178);
+  border-radius: 30px;
+  width: 35%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #242222;
+}
+
+.tudao {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 6rem;
+  color: aliceblue;
+}
+
+.input input {
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+@media (max-width:740px) {
+  .main {
+      background-color: transparent;
+      box-shadow: none;
+  }
+}

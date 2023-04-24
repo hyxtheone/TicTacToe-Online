@@ -9,7 +9,7 @@ Este é um jogo da velha (Tic-Tac-Toe) Online construído utilizando a bibliotec
 - Sistema de salas para jogar contra um amigo.
 - Destaque do vencedor quando houver um ganhador ou empate.
 
-## Pré-requisitos
+## Pré-requisitos ( Caso deseje rodar localmente )
 
 Antes de começar, certifique-se de ter os seguintes requisitos instalados em sua máquina:
 

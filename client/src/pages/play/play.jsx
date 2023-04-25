@@ -1,6 +1,33 @@
 import { useEffect, useState } from "react";
 import "./play.css";
 
+export function calculateWinner(squares) {
+  const lines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+
+  for (let i = 0; i < lines.length; i++) {
+    const [a, b, c] = lines[i];
+    console.log(`${a} ${b} ${c}`)
+
+    if (
+        squares[a].value !== ''
+        && squares[a].value === squares[b].value
+        && squares[a].value === squares[c].value
+    ) {
+      return squares[a].value;
+    }
+  }
+  return null;
+}
+
 class Square {
   constructor(isActive = false, value = "") {
     this.isActive = isActive;
@@ -55,10 +82,7 @@ export default function Board() {
   function handleClick(i) {
 
     if (squares[i].value !== "") return;
-
-    if (end) {
-      return;
-    }
+    if (end) return;
 
     if (xIsNext) {
       squares[i] = new Square(true, "X");
@@ -134,31 +158,4 @@ export default function Board() {
       </div>
     </>
   );
-}
-
-function calculateWinner(squares) {
-  const lines = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6],
-  ];
-
-  for (let i = 0; i < lines.length; i++) {
-    const [a, b, c] = lines[i];
-
-    if (
-      squares[a] &&
-      squares[a].value === squares[b].value &&
-      squares[a].value === squares[c].value
-    ) {
-      return squares[a].value;
-    }
-  }
-
-  return null;
 }

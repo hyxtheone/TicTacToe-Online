@@ -77,7 +77,9 @@ io.on("connection", (socket) => {
     let players = [];
 
     socket.join(room);
+
     io.to(room).emit("room", room);
+
     if (io.sockets.adapter.rooms.get(room).size < 2) {
       io.to(room).emit("waiting");
     }
@@ -92,16 +94,20 @@ io.on("connection", (socket) => {
       io.to(players[1]).emit("set_side", "O");
     }
 
+    if (io.sockets.adapter.rooms.get(room).size > 2) {
+      io.to(socket.id).emit("lot", room);
+    }
+
     socket.on("set_played", (lugar, squares) => {
 
       if (io.sockets.adapter.rooms.get(room).size < 2) return
       
       if (players[0] == socket.id && next() == "X") {
         setPlay(squares, lugar, room)
-        console.log(squares)
+
       } else if (players[1] == socket.id && next() == "O") {
         setPlay(squares, lugar, room)
-        console.log(squares)
+
       }
     });
   });

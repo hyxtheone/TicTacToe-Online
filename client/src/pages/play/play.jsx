@@ -74,7 +74,7 @@ export default function Board() {
   function handleReset() {
     setSquares(Array(9).fill(new Square(false, "")));
     setXIsNext(true);
-    setStatus(`Next player: X`);
+    setStatus(`Next Player: X`);
     setEnd(false);
   }
 

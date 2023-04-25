@@ -38,7 +38,7 @@ io.on("connection", (socket) => {
       io.to(players[1]).emit("set_side", "O");
       io.to(room).emit("room", room);
       socket.on("set_played", (lugar, squares) => {
-        if (players[0] == socket.id && next() == "X") {
+        if (players[0] === socket.id && next() === "X") {
           squares[lugar].value = "X";
           squares[lugar].isActive = true;
           xIsNext = false;
@@ -52,7 +52,7 @@ io.on("connection", (socket) => {
             io.to(room).emit("next_player", "O");
             io.to(room).emit("receive_play", squares);
           }
-        } else if (players[1] == socket.id && next() == "O") {
+        } else if (players[1] === socket.id && next() === "O") {
           squares[lugar].value = "O";
           squares[lugar].isActive = true;
           xIsNext = true;
@@ -93,8 +93,6 @@ function calculateWinner(squares) {
 
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
-    console.log(`${a} ${b} ${c}`)
-
     if (
         squares[a].value !== ''
         && squares[a].value === squares[b].value

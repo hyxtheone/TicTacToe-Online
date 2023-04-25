@@ -32,6 +32,13 @@
   color: aliceblue;
 }
 
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
 .input input {
   border-radius: 20px;
   padding: 10px;

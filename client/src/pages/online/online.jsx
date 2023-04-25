@@ -51,6 +51,11 @@ export default function Board() {
   }, [played]);
 
   useEffect(() => {
+
+    socket.on("waiting", () => {
+      setSide("Waiting Players")
+    })
+
     socket.on("set_side", (side) => {
       setSide(`Your side is: ${side}`);
     });
@@ -61,6 +66,7 @@ export default function Board() {
     socket.on("lot", (room) => {
       setRoom(`A sala ${room} está cheia`)
     })
+
   }, [])
 
   function handleClick(i) {

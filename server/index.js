@@ -1,6 +1,6 @@
 const app = require("express")();
 const server = require("http").createServer(app);
-const io = require("socket.io")(server, {cors: {origin: "*"}})
+const io = require("socket.io")(server, { cors: { origin: "*"}})
 
 app.get("/", (req, res) => {
   return res.json("Hello, World!");
@@ -51,9 +51,9 @@ function calculateWinner(squares) {
     const [a, b, c] = lines[i];
 
     if (
-      squares[a] &&
-      squares[a].value === squares[b].value &&
-      squares[a].value === squares[c].value
+      squares[a].value !== ''
+      && squares[a].value === squares[b].value 
+      && squares[a].value === squares[c].value
     ) {
       return squares[a].value;
     }
@@ -90,10 +90,6 @@ io.on("connection", (socket) => {
     if (io.sockets.adapter.rooms.get(room).size == 2) {
       io.to(players[0]).emit("set_side", "X");
       io.to(players[1]).emit("set_side", "O");
-    }
-
-    if (io.sockets.adapter.rooms.get(room).size > 2) {
-      io.to(socket.id).emit("lot", room);
     }
 
     socket.on("set_played", (lugar, squares) => {

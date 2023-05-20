@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="413c6d87-e17b-4734-be35-682355a20d3c" name="Changes" comment="port change">
-      <change beforePath="$PROJECT_DIR$/client/src/services/socket.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/socket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/vercel.json" beforeDir="false" />
-    </list>
+    <list default="true" id="413c6d87-e17b-4734-be35-682355a20d3c" name="Changes" comment="remove animations-css" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +15,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/client/package.json" />
   </component>
   <component name="ProjectId" id="2PAuyx4mJ8jOZlmne4VzfPpup6H" />
   <component name="ProjectViewState">
@@ -63,7 +63,7 @@
       <workItem from="1682916698068" duration="10035000" />
       <workItem from="1683769662448" duration="77000" />
       <workItem from="1684596111921" duration="2612000" />
-      <workItem from="1684599751007" duration="4147000" />
+      <workItem from="1684599751007" duration="4506000" />
     </task>
     <task id="LOCAL-00001" summary="changed index.js">
       <created>1682913604458</created>
@@ -149,7 +149,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684601856262</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="add EC2 server ip">
+      <created>1684607016720</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1684607016720</updated>
+    </task>
+    <task id="LOCAL-00014" summary="remove animations-css">
+      <created>1684607305018</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1684607305018</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,6 +180,8 @@
     <MESSAGE value="add express" />
     <MESSAGE value="add timeout" />
     <MESSAGE value="port change" />
-    <option name="LAST_COMMIT_MESSAGE" value="port change" />
+    <MESSAGE value="add EC2 server ip" />
+    <MESSAGE value="remove animations-css" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove animations-css" />
   </component>
 </project>
